@@ -39,11 +39,9 @@ const Display = ({ fetchedData }) => {
           </div>
           <h2 className="font-bold">More Books</h2>
           <div className="more-books grid grid-cols-1 gap-y-6 my-4  lg:grid-cols-6 sm:grid-cols-3 ">
-            {fetchedData &&
-              fetchedData.map((item, index) => (
-                <Card key={index} link={item.volumeInfo.imageLinks.thumbnail}  setVal={setVal}/>
-                
-              ) )}
+          {fetchedData && fetchedData.map((item, index) => (
+            <Card key={index} link={item.volumeInfo.imageLinks.thumbnail} setVal={setVal} indexProp={index} />
+          ))}
 
           </div>
         </div>
